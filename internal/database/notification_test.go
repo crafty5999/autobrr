@@ -37,6 +37,7 @@ func getMockNotification() domain.Notification {
 		Devices:   "device1,device2",
 		Priority:  1,
 		Topic:     "mock-topic",
+		Sender:    "mock-sender",
 		CreatedAt: time.Now(),
 		UpdatedAt: time.Now(),
 	}
