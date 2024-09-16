@@ -1591,4 +1591,7 @@ ALTER TABLE irc_network
             REFERENCES proxy(id)
             ON DELETE SET NULL;
 `,
+	`ALTER TABLE notification
+    ADD COLUMN sender TEXT;
+`,
 }

@@ -955,4 +955,7 @@ ALTER TABLE irc_network
     ADD FOREIGN KEY (proxy_id) REFERENCES proxy
         ON DELETE SET NULL;
 `,
+	`ALTER TABLE notification
+    ADD COLUMN sender TEXT;
+`,
 }

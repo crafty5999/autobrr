@@ -45,6 +45,7 @@ type Notification struct {
 	Topic     string           `json:"topic"`
 	CreatedAt time.Time        `json:"created_at"`
 	UpdatedAt time.Time        `json:"updated_at"`
+	Sender    string           `json:"sender"`
 }
 
 type NotificationPayload struct {

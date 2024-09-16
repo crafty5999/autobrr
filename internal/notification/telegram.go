@@ -26,6 +26,7 @@ type TelegramMessage struct {
 	Text            string `json:"text"`
 	ParseMode       string `json:"parse_mode"`
 	MessageThreadID int    `json:"message_thread_id,omitempty"`
+	Sender          string `json:"sender"`
 }
 
 type telegramSender struct {
@@ -64,7 +65,7 @@ func NewTelegramSender(log zerolog.Logger, settings domain.Notification) domain.
 
 func (s *telegramSender) Send(event domain.NotificationEvent, payload domain.NotificationPayload) error {
 
-	payload.Sender = "autobrr"
+	payload.Sender = s.Settings.Sender
 
 	message := s.builder.BuildBody(payload)
 	m := TelegramMessage{
